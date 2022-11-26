@@ -1,0 +1,52 @@
+{
+    "dayOfWork": [
+      {
+        "DAY_OF_WORK": 0,
+        "STATUS": "true",
+        "HOURS_START": "09:30:00",
+        "HOURS_FINISH": "20:00:00"
+      },
+      {
+        "DAY_OF_WORK": 1,
+        "STATUS": "true",
+        "HOURS_START": "09:30:00",
+        "HOURS_FINISH": "20:00:00"
+      },
+      {
+        "DAY_OF_WORK": 2,
+        "STATUS": "true",
+        "HOURS_START": "09:30:00",
+        "HOURS_FINISH": "20:00:00"
+      },
+      {
+        "DAY_OF_WORK": 3,
+        "STATUS": "true",
+        "HOURS_START": "09:30:00",
+        "HOURS_FINISH": "20:00:00"
+      },
+      {
+        "DAY_OF_WORK": 4,
+        "STATUS": "true",
+        "HOURS_START": "09:30:00",
+        "HOURS_FINISH": "20:00:00"
+      },
+      {
+        "DAY_OF_WORK": 5,
+        "STATUS": "true",
+        "HOURS_START": "09:30:00",
+        "HOURS_FINISH": "20:00:00"
+      },
+      {
+        "DAY_OF_WORK": 6,
+        "STATUS": "true",
+        "HOURS_START": "09:30:00",
+        "HOURS_FINISH": "20:00:00"
+      },
+      {
+        "DAY_OF_WORK": 9,
+        "STATUS": "true",
+        "HOURS_START": "09:30:00",
+        "HOURS_FINISH": "20:00:00"
+      }
+    ]
+  }

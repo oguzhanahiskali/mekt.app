@@ -1,0 +1,27 @@
+{
+    "Staff": [
+      {
+        "DURUM": "1",
+        "TUR": "1",
+        "USERSTATUS": "1",
+        "DIL": "tr",
+        "TEMA": "FALSE",
+        "TOKEN": "",
+        "ADI": "SİSTEM",
+        "SOYADI": "DESTEK",
+        "GENDER": null,
+        "COUNTRY_ISO": "tr",
+        "PHONE_COUNTRY": "90",
+        "EPOSTA": "oguzhan1@ahiskali.org",
+        "ADRES": "yaylabaşı sk",
+        "SIGORTASICIL": "3407200716061",
+        "ISEGIRISDT": "2016-01-08",
+        "MAAS_TYPE": "1",
+        "MAAS": "",
+        "UID": 1,
+        "DT": "2019-03-11 19:19:01",
+        "UPD_UID": null,
+        "UPT_DT": null
+      }
+    ]
+  }

@@ -1,0 +1,14 @@
+{
+  "listItems": [
+    {"name":"Randevu Takvimi", "url":"app-events.php","icon":"feather icon-calendar"},
+    {"name":"Müşteriler", "url":"app-customer-list.php","icon":"feather icon-users"},
+    {"name":"Toplu SMS Gönder", "url":"app-sms-send.php","icon":"feather icon-message-circle"},
+    {"name":"SMS İleti Raporu", "url":"app-sms-report.php","icon":"feather icon-message-circle"},
+    {"name":"Hizmetler [Ayar]", "url":"app-services.php","icon":"feather icon-list"},
+    {"name":"Hizmet Bölgeleri [Ayar]", "url":"app-services-application-areas.php","icon":"feather icon-share-2"},
+    {"name":"Ürünler [Ayar]", "url":"app-products.php","icon":"feather icon-tag"},
+    {"name":"Oda Ayarları | [Ayar]", "url":"settings-room.php","icon":"feather icon-tag"},
+    {"name":"Şirket Çalışma Cetveli | [Ayar]", "url":"settings-dayOfwork.php","icon":"feather icon-tag"}
+
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "Application_Areas": [
+    {
+      "STATUS": "1",
+      "AREA_ID": 21,
+      "DURATION": 2,
+      "PRICE": 450,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 23,
+      "DURATION": 2,
+      "PRICE": 400,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 24,
+      "DURATION": 2,
+      "PRICE": 400,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 30,
+      "DURATION": 3,
+      "PRICE": 900,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 33,
+      "DURATION": 3,
+      "PRICE": 600,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 34,
+      "DURATION": 3,
+      "PRICE": 900,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 35,
+      "DURATION": 5,
+      "PRICE": 2000,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 9,
+      "DURATION": 1,
+      "PRICE": 400,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 1,
+      "DURATION": 3,
+      "PRICE": 450,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 11,
+      "DURATION": 1,
+      "PRICE": 450,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 14,
+      "DURATION": 1,
+      "PRICE": 450,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 15,
+      "DURATION": 5,
+      "PRICE": 450,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 37,
+      "DURATION": 3,
+      "PRICE": 450,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 38,
+      "DURATION": 3,
+      "PRICE": 450,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 2,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 3,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 4,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 5,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 6,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 7,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 8,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 10,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 12,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 13,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 16,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 17,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 18,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 19,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 20,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 22,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 25,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 26,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 27,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 28,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 29,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 31,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 32,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 36,
+      "DURATION": 1,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 39,
+      "DURATION": 5,
+      "PRICE": 0,
+      "UID": 33
+    },
+    {
+      "STATUS": "1",
+      "AREA_ID": 40,
+      "DURATION": 3,
+      "PRICE": 0,
+      "UID": 33
+    }
+  ]
+}

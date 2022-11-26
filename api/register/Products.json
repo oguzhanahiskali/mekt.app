@@ -1,0 +1,38 @@
+{
+    "Products": [
+      {
+        "PID": 60,
+        "FIRMA_ID": 179,
+        "SUBE_ID": 1,
+        "STATUS": 1,
+        "BARCODE": "123123123",
+        "CURRENCY": "TRY",
+        "PRICE": 150.0,
+        "SCALE": "200",
+        "TYPE": "MiliLitre",
+        "IN_DT": "2022-01-01",
+        "STOCK": "1000",
+        "STOCK_ALARM": "10",
+        "EXPIRY_DT": "2024-01-01",
+        "UID": 33,
+        "DT": "2022-01-01 00:00:00"
+      },
+      {
+        "PID": 64,
+        "FIRMA_ID": 179,
+        "SUBE_ID": 1,
+        "STATUS": 1,
+        "BARCODE": "123321123",
+        "CURRENCY": "TRY",
+        "PRICE": 49.90,
+        "SCALE": "50",
+        "TYPE": "MiliLitre",
+        "IN_DT": "2022-01-01",
+        "STOCK": "1000",
+        "STOCK_ALARM": "10",
+        "EXPIRY_DT": "2024-01-01",
+        "UID": 33,
+        "DT": "2022-01-01 00:00:00"
+      }
+    ]
+  }

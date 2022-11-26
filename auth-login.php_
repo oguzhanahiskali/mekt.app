@@ -1,0 +1,246 @@
+<?php
+
+if(!empty($_GET['logout']=="true")) {
+  // Initialize the session
+  session_start();
+  
+  // Unset all of the session variables
+  $_SESSION = array();
+  
+  // Destroy the session.
+  session_destroy();
+  
+  // Redirect to login page
+  if(!empty($_GET['returnURL'])){
+    header("location: auth-login.php?returnURL=".$_GET['returnURL']);
+    exit;
+  }else{
+    header("location: auth-login.php?returnURL=/");
+    exit;
+  }
+}
+// Include config file
+include 'conf.php';
+
+// Define variables and initialize with empty values
+$username       = $password = "";
+$username_err   = $password_err = "";
+
+if($_GET['returnURL']){
+    $redirect = $_GET['returnURL'];
+}else{
+    $redirect = 'index.php';
+}
+// Processing form data when form is submitted
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    // Check if username is empty
+    if(empty(trim($_POST["USERNAME"]))){
+        $username_err = 'Lütfen kullanıcı adınızı girin.';
+    } else{
+        $username = trim($_POST["USERNAME"]);
+    }
+
+    // Check if password is empty
+    if(empty(trim($_POST['PASSWORD']))){
+        $password_err = 'Lütfen şifrenizi girin.';
+    } else{
+        $password = trim($_POST['PASSWORD']);
+    }
+
+    // Validate credentials
+    if(empty($username_err) && empty($password_err)){
+        // Prepare a select statement
+        $sql = "SELECT USERNAME, PASSWORD FROM tbl_personel WHERE USERNAME = ? AND USERSTATUS = 1 AND DURUM = 1";
+
+        if($stmt = mysqli_prepare($link, $sql)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "s", $param_username);
+
+            // parametre ata
+            $param_username = $username;
+
+            // Hazırlanan ifadeyi yerine getirme girişimi
+            if(mysqli_stmt_execute($stmt)){
+                // db sonucu
+                mysqli_stmt_store_result($stmt);
+
+                // Kullanıcı adının olup olmadığını kontrol edin, evet ise şifreyi doğrular
+                if(mysqli_stmt_num_rows($stmt) == 1){
+                    // Bind result variables
+                    mysqli_stmt_bind_result($stmt, $username, $hashed_password);
+                    if(mysqli_stmt_fetch($stmt)){
+                                    $pws = $_POST['PASSWORD'];
+
+                        if(password_verify($password, $hashed_password)){
+                            /* Password is correct, so start a new session and
+                            save the username to the session */
+                            session_start();
+
+                            $_SESSION['USERNAME'] = $username;
+							$uip 	=	$_SERVER['REMOTE_ADDR'];
+                            $simdi 	=	date('Y-m-d H:i:s');
+							$action =	'yes';
+							mysqli_query($link,"INSERT INTO tbl_login_info(USERNAME,TESTEDPW,USERIP,DATE,SUCCESS)values('$username','$pws','$uip','$simdi','$action')");
+
+                            header("location: ".$redirect);
+                        } else{
+                            // Display an error message if password is not valid
+							$uip 	=	$_SERVER['REMOTE_ADDR'];
+							$simdi 	=	date('Y-m-d H:i:s');
+                            $action = 'no';
+							mysqli_query($link,"INSERT INTO tbl_login_info(USERNAME,TESTEDPW,USERIP,DATE,SUCCESS) values('$username','$pws','$uip','$simdi','$action')");
+
+                            $password_err = 'Girdiğiniz şifre geçerli değil.';
+                        }
+                    }
+                } else{
+                    // Display an error message if username doesn't exist
+                    $username_err = 'Kullanıcı adı hatalı.';
+                }
+            } else{
+                echo "Oops! Lütfen daha sonra tekrar deneyin.";
+            }
+        }
+
+        // Close statement
+        //mysqli_stmt_close($stmt);
+    }
+
+    // Close connection
+    mysqli_close($link);
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="/app-assets/vendors/js/extensions/toastr.min.js"></script>
+    <script src="https://www.estetikpanel.com/app-assets/js/scripts/extensions/toastr.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/less@3.13" ></script>
+
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+      
+    <link rel="stylesheet" href="stil.css" />
+
+    <title>EstetikPanel | Şimdi kullanmaya başla!</title>
+    <meta name="description" content="İşletmenizi dilediğiniz yerden, altyapı yatırımı yapmadan bulut teknolojisi ile ister telefondan ister bilgisayardan müşterilerinizi, randevu ve iş akışınızı yönetmeye şimdi başlayın.">
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form class="sign-in-form" id="sign-in-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>?returnURL=<?php echo $redirect; ?>" novalidate method="post">
+            <div class="text-center">
+              <div class="login-logo">
+                <img class="js-rotating" src="https://www.estetikpanel.com/app-assets/images/logo/ep-dark.png">
+              </div>
+            </div>
+            <h2 class="title">Oturumu Aç</h2>
+            <div class="input-field">
+              <i class="fas fa-home"></i>
+              <a class="tooltip" alt="Lütfen Firma ID bilgisi giriniz.">
+                <input type="number" id="companyID" name="companyID" autofocus placeholder="Firma ID" />
+              </a>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" id="logUN" name="USERNAME" autofocus placeholder="Kullanıcı Adı" disabled="disabled"/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="password" name="PASSWORD" placeholder="Şifre" disabled="disabled"/>
+            </div>
+            <input type="submit" value="Giriş Yap" class="btn solid" />
+            <div style="text-align:center">
+              <p id="gununSozu">Yükleniyor....</p>
+            </div>
+          </form>
+          <form action="#" class="sign-up-form">
+            <h2 class="title" >Ücretsiz Kullanmaya Başla</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" id="regSN" placeholder="Salon Adı" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Salon Sahibi (İsim Soyisim)" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-phone"></i>
+              <a class="tooltip" alt="Lütfen kullandığınız GEÇERLİ bir cep telefonu numarası giriniz. Giriş bilgileriniz bu numaraya SMS olarak iletilecektir. Örn.: (532)-123-45-67">
+                <input type="text" id="telefons" class="phone-inputmask" placeholder="(532)-123-45-67" />
+              </a>
+            </div>
+            <input type="submit" class="btn" value="Kayıt Ol" />
+          </form>
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>İlk defa mı geldiniz?</h3>
+            <p>
+              Modül kısıtlaması olmaksızın, </br> tam 1 ay boyunca salonunuzu Ücretsiz yönetebilirsiniz.
+            </p>
+            <button class="btn transparent" id="sign-up-btn">Kullanmaya Başla</button>
+            <img id="left-bg" src="/app-assets/images/pages/login/preloader.gif" height="250" width="312" alt="branding logo">
+          </div>
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>Zaten Üye misiniz?</h3>
+            <p>
+              O halde yanlış yerdesiniz :) Sizi buraya alalım...
+            </p>
+            <button class="btn transparent" id="sign-in-btn">
+              Oturumu Aç
+            </button>
+          </div>
+          <img src="img/ep.svg" class="image" alt="" />
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+    <script src="/app-assets/vendors/js/extensions/inputmask/jquery.inputmask.bundle.min.js"></script>
+    <script src="/app-assets/vendors/js/extensions/form-inputmask.js"></script>
+    <script>
+      function random_item(items) { return items[Math.floor(Math.random()*items.length)]; }
+      var items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+      $("#left-bg").attr("src", '/app-assets/images/pages/login/'+random_item(items)+'.png');
+      $('#companyID').keyup(function () {
+          var len = $(this).val().length;
+          if (len >= 2) {
+            $("#logUN").prop("disabled", false);
+            $("#password").prop("disabled", false);
+          }
+          else{
+            $("#logUN").prop("disabled", true);
+            $("#password").prop("disabled", true);
+          }
+      });
+      function random_motto(mottos) { return mottos[Math.floor(Math.random()*mottos.length)]; }
+      var mottos = [
+        'Mutlu bir hayat yaşamak istiyorsanız hayatınızı bir amaca bağlayın. Kişilere ya da eşyalara değil. Albert Einstein',
+        'Mutlu olmak her şeye sahip olmak değil, sahip olduklarını her şey yapabilmektir.',
+        'Oysa defalarca sormuşlardı. Büyüyünce ne olacaksın diye. Mutlu diyemedik. Çünkü çocuktuk akıl edemedik.',
+        'Kaybettim sandıkların kurtulduklarındır belki de. Unutma kimi gitti yeri mutlu eder, kimi terk ettiği yeri.',
+        'Ve gün gelecek hayat şu yorgun yüzüne gülümseyerek bakacak. Ve diyecek ki hazır ol, mutlu olma sırası sende.',
+        'Azla mutluluk çokla didişmekten iyidir.',
+        'Mutluluk küçük çocuklara hediye almak gibidir.',
+        'İnsanlar için en ideal düzen, onların mutlu olduğu düzendir.',
+        'Mutluluğu benimle bulan benimdir gerisi misafir.',
+        'Bugün çıktığımız her basamak, yarınki hayatımızın temelidir.',
+        'Mutlu edemeyeceksen meşgul de etmeyeceksin. Özdemir Asaf',
+      ];
+      $("#gununSozu").text(random_motto(mottos));
+  </script>
+  </body>
+</html>

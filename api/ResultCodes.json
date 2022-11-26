@@ -1,0 +1,48 @@
+{
+  "1000": "Success",
+  "1001": "Unsuccessful",
+  "1007": "New record created successfully",
+  "1008": "Deletion failed",
+  "1009": "Customer registration completed successfully",
+  "1010": "No action can be taken for the next date",
+  "1011": "No session selected",
+  "1012": "There are empty fields",
+  "1033": "already done",
+  "1014": "Service area cannot be missing",
+  "1015": "The control date cannot be the same as the appointment date",
+  "1999": "Bad request",
+  "2000": "You have attempted an unauthorized operation. This transaction has been recorded. If you do this again, your account will be closed automatically and legal action will be taken against you.",
+  "2001": "The entered credentials have been verified, but this phone number has already been registered in the system",
+  "Paids":{
+    "Success":{
+      "100020": "Required payment made",
+      "100021": "Already done",
+      "100022": "Added new installment due to remaining payment",
+      "100023": "The remaining installment payments have been updated",
+      "100024": "Installment canceled successfully",
+      "100025": "All debts were paid",
+      "100026": "Successfully paid less than required payment",
+      "100027": "payment transaction updated to not paid successfully",
+      "100028": "all debt has been successfully settled",
+      "100029": "Overpayment successful",
+      "100030": "Remaining installments restructured successfully",
+      "100031": "installment canceled successfully"
+    },
+    "Failed":{
+      "100130": "Required payment failed",
+      "100131": "Could not add new installment",
+      "100132": "Error occurred while updating remaining installment payments",
+      "100133": "installment cancellation failed",
+      "100134": "failed to make less than required payment",
+      "100135": "update process failed as payment transaction not paid",
+      "100136": "all debt settlement failed",
+      "100137": "Overpayment failed",
+      "100138": "Restructuring the remaining installments failed",
+      "100139": "installment cancellation failed",
+      "100140": "The number of installments must be determined because the payment remains!",
+      "100141": "Duplicate insert blocked!"
+    }
+  }
+
+
+}

@@ -1,0 +1,133 @@
+<?php
+//calisir
+
+     include '../header-top.php';
+     include '../functions.php';
+
+    //get check
+    $tahsilattarih   = date('Y-m-d', strtotime($_GET['inp-tahsilat-tarih']));
+    $tahsilatfiyat   = $_GET['inp-tahsilat-fiyat'];
+    $tahsilattipi    = $_GET['inp-tahsilat-form-tipi'];
+    $tahsilatdurum   = $_GET['inp-tahsilat-form-durum'];
+    $ids             = $_GET['taksitid'];
+
+
+    //Query for Log
+    $QfLog = $db->query("SELECT TAKSIT_TARIHI, TAHSILAT_DURUM, TAHSILAT_TIPI FROM tbl_seans_taksit WHERE ID = '{$ids}'")->fetch(PDO::FETCH_ASSOC);
+    
+    //old value arrays in push
+    $old = $QfLog;
+
+    //update
+    $query        = $db->prepare("UPDATE tbl_seans_taksit SET
+    TAKSIT_TARIHI = ?,
+    TAHSILAT_DURUM= ?,
+    TAHSILAT_TIPI = ?
+    WHERE ID      = $ids
+    AND FIRMA_ID  = $user_Firma");
+    $update       = $query->execute(array(
+         $tahsilattarih,
+         $tahsilatdurum,
+         $tahsilattipi
+    ));
+
+    //new value control
+    $QfLog = $db->query("SELECT TAKSIT_TARIHI, TAHSILAT_DURUM, TAHSILAT_TIPI FROM tbl_seans_taksit WHERE ID = '{$ids}'")->fetch(PDO::FETCH_ASSOC);
+
+    //new value arrays in push
+    $new = $QfLog;
+
+
+    $eski = array_diff_assoc($old, $new); //old and new value diffrents
+    $yeni = array_diff_assoc($new, $old); //new and old value diffrents
+
+    //logs saved!
+    logSQL($user_ID, 'Tahsilat Güncelleme', $eski, $yeni);
+
+    //if update successfull: basarili 
+    if ( $update ){
+         print "basarili";
+    }
+
+/*
+include '../header-top.php';
+include '../functions.php';
+echo "<pre>";
+print_r($_GET);
+    //get check
+    $tahsilattarih   = date('Y-m-d', strtotime($_GET['inp-tahsilat-tarih']));
+    $tahsilatfiyat   = $_GET['inp-tahsilat-fiyat'];
+    $tahsilattipi    = $_GET['inp-tahsilat-form-tipi'];
+    $tahsilatdurum   = $_GET['inp-tahsilat-form-durum'];
+    $hizmetFiyat     = $_GET['hizmetFiyat'];
+    $kartid          = $_GET['kartid'];
+    $ids             = $_GET['taksitid'];
+
+
+    //Query for Log
+     $QfLog = $db->query("SELECT FIYAT FROM tbl_seans_kart WHERE ID = '{$kartid}' AND FIRMA_ID = '{$user_Firma}'")->fetch(PDO::FETCH_ASSOC);
+     $currentPrice = $QfLog['FIYAT'];
+    
+     if($tahsilatdurum==2){
+          if($currentPrice>$tahsilatfiyat){
+               echo "Ödemesi gereken miktardan:".$currentPrice." AZ ödeme yapıldı: ".$tahsilatfiyat;
+          }elseif($currentPrice<$tahsilatfiyat){
+               $QFazlaOdeme = $db->query("select sum(FIYAT) AS KALANTOPLAM from tbl_seans_taksit where KART_ID = '{$kartid}' AND TAHSILAT_DURUM = 0 AND FIRMA_ID = '{$user_Firma}'")->fetch(PDO::FETCH_ASSOC);
+               echo $QFazlaOdeme['KALANTOPLAM'];
+               echo "<br>";
+               echo $tahsilatfiyat;
+               if($QFazlaOdeme['KALANTOPLAM']<$tahsilatfiyat){
+                    echo "Toplam borcundan fazla ödeme yapıldı. Kabul edilemez.".$currentPrice.' '.$tahsilatfiyat. ' '.$QFazlaOdeme['KALANTOPLAM'];
+               }else if($QFazlaOdeme['KALANTOPLAM']>$tahsilatfiyat){
+                    echo "Ödemesi gereken miktardan:".$currentPrice." FAZLA ödeme yapıldı: ".$tahsilatfiyat;
+               }else{
+                    echo "ödemesi gerkeen MİKTAR ÖDENDİ :".$currentPrice.' '.$tahsilatfiyat. ' '.$QFazlaOdeme['KALANTOPLAM'];
+               }
+          }else if($currentPrice==$tahsilatfiyat){
+               echo "Ödemesi gereken MİKTAR ÖDENDİ! :".$tahsilatfiyat;
+          }else{
+               echo "hata";
+          }
+     }elseif($tahsilatdurum==1){
+          $nextTaksit=$ids+1;
+          echo "Ödenmesi gereken miktar İptal edildiği için Bir sonraki taksite ".$nextTaksit." devredildi.";
+     }
+    
+    //old value arrays in push
+    $old = $QfLog;
+
+    //update
+    $query        = $db->prepare("UPDATE tbl_seans_taksit SET
+    TAKSIT_TARIHI = ?,
+    TAHSILAT_DURUM= ?,
+    TAHSILAT_TIPI = ?,
+    FIYAT         = ?
+    WHERE ID      = $ids
+    AND KART_ID   = $kartid
+    AND FIRMA_ID  = $user_Firma");
+    $update       = $query->execute(array(
+         $tahsilattarih,
+         $tahsilatdurum,
+         $tahsilattipi,
+         $tahsilatfiyat
+    ));
+
+    //new value control
+    $QfLog = $db->query("SELECT TAKSIT_TARIHI, TAHSILAT_DURUM, TAHSILAT_TIPI FROM tbl_seans_taksit WHERE ID = '{$ids}'")->fetch(PDO::FETCH_ASSOC);
+
+    //new value arrays in push
+    $new = $QfLog;
+
+
+    $eski = array_diff_assoc($old, $new); //old and new value diffrents
+    $yeni = array_diff_assoc($new, $old); //new and old value diffrents
+
+    //logs saved!
+    logSQL($user_ID, 'Tahsilat Güncelleme', $eski, $yeni);
+
+    //if update successfull: basarili 
+    if ( $update ){
+         //print "basarili";
+    }
+*/
+  ?>

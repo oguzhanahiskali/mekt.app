@@ -1,0 +1,124 @@
+{
+    "Services": [
+      {
+        "HIZMET_ADI": "Lazer Epilasyon",
+        "HIZMET_SURE": "60 Dakika",
+        "HIZMET_SEANS": "8 Seans",
+        "HIZMET_FIYAT": "400",
+        "CURRENCY": "TRY",
+        "REGIONS": "1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 13, 14, 16, 17, 28, 87, 90, 85, 82, 80, 79, 81, 84, 77, 78, 91, 92, 93, 94, 95, 272, 269, 265, 266, 271, 270, 268, 267"
+      },
+      {
+        "HIZMET_ADI": "Ki̇rpi̇k Li̇fti̇ng",
+        "HIZMET_SURE": "60 Dakika",
+        "HIZMET_SEANS": "1 Seans",
+        "HIZMET_FIYAT": "200",
+        "CURRENCY": "TRY",
+        "REGIONS": null
+      },
+      {
+        "HIZMET_ADI": "Hydrafaci̇al Ci̇lt Bakımı",
+        "HIZMET_SURE": "60 Dakika",
+        "HIZMET_SEANS": "1 Seans",
+        "HIZMET_FIYAT": "250",
+        "CURRENCY": "TRY",
+        "REGIONS": null
+      },
+      {
+        "HIZMET_ADI": "Temel Ci̇lt Bakımı",
+        "HIZMET_SURE": "60 Dakika",
+        "HIZMET_SEANS": "1 Seans",
+        "HIZMET_FIYAT": "100",
+        "CURRENCY": "TRY",
+        "REGIONS": "95"
+      },
+      {
+        "HIZMET_ADI": "Kaş Kontur",
+        "HIZMET_SURE": "1 Saat 15 Dakika",
+        "HIZMET_SEANS": "1 Seans",
+        "HIZMET_FIYAT": "500",
+        "CURRENCY": "TRY",
+        "REGIONS": null
+      },
+      {
+        "HIZMET_ADI": "G5",
+        "HIZMET_SURE": "60 Dakika",
+        "HIZMET_SEANS": "8 Seans",
+        "HIZMET_FIYAT": "1000",
+        "CURRENCY": "TRY",
+        "REGIONS": null
+      },
+      {
+        "HIZMET_ADI": "İğneli̇ Epi̇lasyon",
+        "HIZMET_SURE": "30 Dakika",
+        "HIZMET_SEANS": "1 Seans",
+        "HIZMET_FIYAT": "70",
+        "CURRENCY": "TRY",
+        "REGIONS": null,
+        "UID": 260
+      },
+      {
+        "HIZMET_ADI": "Ben Aldırma İşlemı",
+        "HIZMET_SURE": "60 Dakika",
+        "HIZMET_SEANS": "1 Seans",
+        "HIZMET_FIYAT": "180",
+        "CURRENCY": "TRY",
+        "REGIONS": null,
+        "UID": 260
+      },
+      {
+        "HIZMET_ADI": "Altın Oran",
+        "HIZMET_SURE": "30 Dakika",
+        "HIZMET_SEANS": "1 Seans",
+        "HIZMET_FIYAT": "50",
+        "CURRENCY": "TRY",
+        "REGIONS": null,
+        "UID": 260
+      },
+      {
+        "HIZMET_ADI": "Bölgesel Beyazlatma",
+        "HIZMET_SURE": "60 Dakika",
+        "HIZMET_SEANS": "1 Seans",
+        "HIZMET_FIYAT": "410",
+        "CURRENCY": "TRY",
+        "REGIONS": null,
+        "UID": 260
+      },
+      {
+        "HIZMET_ADI": "Dudak Renklendi̇rme",
+        "HIZMET_SURE": "1 Saat 15 Dakika",
+        "HIZMET_SEANS": "1 Seans",
+        "HIZMET_FIYAT": "500",
+        "CURRENCY": "TRY",
+        "REGIONS": null,
+        "UID": 260
+      },
+      {
+        "HIZMET_ADI": "Hifu",
+        "HIZMET_SURE": "60 Dakika",
+        "HIZMET_SEANS": "1 Seans",
+        "HIZMET_FIYAT": "1000",
+        "CURRENCY": "TRY",
+        "REGIONS": null,
+        "UID": 260
+      },
+      {
+        "HIZMET_ADI": "Plazma Pen",
+        "HIZMET_SURE": "60 Dakika",
+        "HIZMET_SEANS": "3 Seans",
+        "HIZMET_FIYAT": "1500",
+        "CURRENCY": "TRY",
+        "REGIONS": null,
+        "UID": 260
+      },
+      {
+        "HIZMET_ADI": "Kaş Alımı",
+        "HIZMET_SURE": "5 Dakika",
+        "HIZMET_SEANS": "1 Seans",
+        "HIZMET_FIYAT": "25",
+        "CURRENCY": "TRY",
+        "REGIONS": null,
+        "UID": 33
+      }
+    ]
+  }
