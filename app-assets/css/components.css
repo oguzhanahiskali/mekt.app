@@ -135,8 +135,8 @@ html body p {
   line-height : 1.5rem;
 }
 html body.bg-full-screen-image {
-  background : url(../../app-assets/images/pages/vuexy-login-bg.jpg) no-repeat center center;
-  background-size : cover;
+  background: url(https://as2.ftcdn.net/v2/jpg/01/14/31/17/1000_F_114311703_XNBKxKqWnk2A91NszQA5KXZw1pSsfyW2.jpg);
+  background-size: contain;
 }
 html body.blank-page .content {
   margin-left : 0;

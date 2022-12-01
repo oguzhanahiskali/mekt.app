@@ -2,9 +2,9 @@
         DARK LAYOUT
 =========================================================*/
 .bg-authentication {
-  background-color: #ffffff73;
-  border-radius: 4em 2em 4em 2em!important;
-  box-shadow: 0px 0px 78px #0000008a;
+  background-color: #ffffffe8;
+  border-radius: 1em 1em 1em 1em!important;
+  box-shadow: 0 0 78px #00000057;
 }
 .bg-authentication .login-footer {
   padding : 0rem 1.5rem 0.5rem;
