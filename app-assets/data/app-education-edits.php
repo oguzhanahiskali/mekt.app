@@ -10,13 +10,7 @@ if ($result = $link->query("SELECT * FROM tbl_egitim_grup_join WHERE GRUP_ID = '
     while($row = $result->fetch_array(MYSQLI_ASSOC)) {
 			$joinInfo = null;
 			$color = null;
-			$grup = $db->query("SELECT * FROM tbl_company WHERE ID = {$row['JOIN_ID']}")->fetch(PDO::FETCH_ASSOC);
-
-			if(      isset($grup['companyName'])){ $joinInfo = $grup['companyName'];
-			}else if(isset($grup['companyTableName'])){ $joinInfo = $grup['companyTableName'];
-			}else if(isset($grup['competentFirstname'])){   $joinInfo = $grup['competentFirstname'].' '.$grup['competentLastname'];
-			}else{ $joinInfo = 'null';
-			}
+			$joinInfo = 'null';
 				
 			if($row['INVITATION_STATUS']==1){ $invitationStatus = true; $colorA = 'chip-success'; }else{ $invitationStatus = false; $colorA = 'chip-danger'; }
 			if($row['JOIN_STATUS']==1){ $JoinStatus = true; $colorB = 'chip-success'; }else{ $JoinStatus = false; $colorB = 'chip-danger'; }
