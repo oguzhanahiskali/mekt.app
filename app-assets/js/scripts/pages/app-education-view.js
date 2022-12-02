@@ -109,55 +109,7 @@ $(document).ready(function () {
                 $inputPermissionsUserName = $('<input type="hidden" class="joinGroup" name="joinGroup"/>').val(ids);
                 $('#JoinsList').append($inputPermissionsUserName);
 
-              //DualListBox Companys
-                $ArrPermissionsCompanys= [];
-                for (let i = 0; i < obj['Companys'].length; i++) {
-                    $shortCompanys = obj['Companys'][i]['ID'];
-                    $descriptionCompanys = obj['Companys'][i]['companyTitle'];
-                    $selectedCompanys = false;
-                    if(obj['Companys'][i]['joinStatus']==true){
-                      $selectedCompanys = true;
-                      $inputSelectedPermissionCustomers = $('<input type="hidden" class="joinGroup1" name="multipleSirketler[]"/>').val($shortCompanys);
-                      $('#JoinsList').append($inputSelectedPermissionCustomers);
-
-                    }
-                    $ArrPermissionsCompanys.push({
-                        text: $descriptionCompanys,
-                        value: $shortCompanys,
-                        selected: $selectedCompanys
-                    });
-                }
-                var dualListboxCompanys = new DualListbox('#multipleSirketler', {
-                    availableTitle:'Tüm Şirketler',
-                    selectedTitle: 'Davet Edilecekler',
-                    addButtonText: 'Ekle',
-                    removeButtonText: 'Çıkar',
-                    addAllButtonText: 'Tümünü Ekle',
-                    removeAllButtonText: 'Tümünü Çıkar',
-                    searchPlaceholder: 'Şirket Ara',
-                    options: $ArrPermissionsCompanys
-                });
-                dualListboxCompanys.addEventListener('added', function(event){
-                    $(".joinGroup1").remove();
-                    $('#JoinsList').append($inputPermissionsUserName);
-                    $.each( dualListboxCompanys.selected, function( key, value ) {
-                        $selectedPermissionsCompanys = dualListboxCompanys.selected[key].dataset.id;
-                        $inputSelectedPermissionCompanys = $('<input type="hidden" class="joinGroup1" name="multipleSirketler[]"/>').val($selectedPermissionsCompanys);
-                        $('#JoinsList').append($inputSelectedPermissionCompanys);
-                    });
-                });
-                dualListboxCompanys.addEventListener('removed', function(event){
-                    $(".joinGroup1").remove();
-                    $('#JoinsList').append($inputPermissionsUserName);
-                    $.each( dualListboxCompanys.selected, function( key, value ) {
-                        $selectedPermissionsCompanys = dualListboxCompanys.selected[key].dataset.id;
-                        $inputSelectedPermissionCompanys = $('<input type="hidden" class="joinGroup1" name="multipleSirketler[]"/>').val($selectedPermissionsCompanys);
-                        $('#JoinsList').append($inputSelectedPermissionCompanys);
-                    });
-                });
-
-
-              //DualListBox Companys
+              //DualListBox Customers
               $ArrPermissionsCustomers= [];
               for (let i = 0; i < obj['Customers'].length; i++) {
                   $shortCustomers = obj['Customers'][i]['ID'];
