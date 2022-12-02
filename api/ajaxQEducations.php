@@ -14,7 +14,6 @@ if(!empty($_GET['id'])){
       $json = [
          'ID'      =>  $row['ID'],
          'GRUP' =>  $row['GRUP_ADI'],
-         'EDU_ID' =>  $row['EGITIM_ID'],
          'START'=>  $row['START'],
          'FINISH' =>  $row['FINISH'],
          'STATUS' =>  $row['STATUS'],
