@@ -155,15 +155,6 @@
 
         
     </script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N04YC9HX13"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-N04YC9HX13');
-    </script>
-        <link rel="stylesheet" href="/assets-m/css/styles.css">
+    <link rel="stylesheet" href="/assets-m/css/styles.css">
 
 </head>
