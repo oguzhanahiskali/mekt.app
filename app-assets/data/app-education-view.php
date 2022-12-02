@@ -11,7 +11,6 @@ if ($result = $link->query("SELECT * FROM view_egitim_grup WHERE STATUS = 1")) {
 
 		$myArray[] = [
 			'ID'	=> intval($row['ID']),
-			'Education'=> $row['EGITIM_ADI'],
 			'EducationID'=> $sessionID,
 			'Group'	=> $row['GRUP_ADI'],
 			'Start'	=> $row['START'],
