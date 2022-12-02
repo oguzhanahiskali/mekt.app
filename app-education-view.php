@@ -46,7 +46,7 @@ if($varmi==false){
 <!-- BEGIN: Head-->
 <?php include 'includes/head.php'?>
 <link href="/app-assets/dualList/dual-listbox.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/basvuru-formu/app-assets/vendors/css/extensions/toastr.min.css">
+    <link rel="stylesheet" type="text/css" href="/app-assets/vendors/css/extensions/toastr.min.css">
 <script>
     
     var ids = <?php echo $getID; ?>;
@@ -350,7 +350,7 @@ if($varmi==false){
     <?php include 'includes/footer.php'?>
     <script src="app-assets/js/scripts/ui/data-list-view.js"></script>
     <script src="/app-assets/dualList/dual-listbox-education-company.js"></script>
-    <script src="/basvuru-formu/app-assets/js/scripts/extensions/ext-component-toastr.min.js"></script>
+    <script src="/app-assets/js/scripts/extensions/ext-component-toastr.min.js"></script>
     <abc></abc>
     <script>
         $(document).ready(function() {
