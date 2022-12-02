@@ -1,11 +1,11 @@
 {
-  "start_url": "https://estetik.app/",
-  "name": "Estetik Panel v2.1",
-  "short_name": "EstetikPanel",
-  "description": "Güzellik ve Estetik Merkezi Yazılım Programı, Salon Takip Sistemi.",
+  "start_url": "https://mekt.app/",
+  "name": "MektApp Panel v3.2",
+  "short_name": "MektApp",
+  "description": "MektApp Eğitim Kurumları Yazılımı Programı, Eğitim Kurumları Takip Sistemi.",
   "background_color": "#786cf1",
   "display": "standalone",
-  "scope": "https://estetik.app/",
+  "scope": "https://mekt.app/",
   "theme_color": "#786cf1",
   "icons": [
     {
