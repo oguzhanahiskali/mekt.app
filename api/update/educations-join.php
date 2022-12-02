@@ -54,7 +54,6 @@ if($_POST['joinGroup']){
 
           $query = $db->prepare("INSERT INTO tbl_egitim_grup_join SET
               GRUP_ID = ?,
-              JOIN_TYPE = ?,
               JOIN_ID = ?,
               INVITATION_STATUS = ?,
               JOIN_STATUS = ?,
@@ -63,7 +62,6 @@ if($_POST['joinGroup']){
 
           $update = $query->execute(array(
               $joinGroupID,
-              'sirket',
               $v,
               '1',
               $status,
@@ -93,7 +91,6 @@ if($_POST['joinGroup']){
 
           $query = $db->prepare("INSERT INTO tbl_egitim_grup_join SET
               GRUP_ID = ?,
-              JOIN_TYPE = ?,
               JOIN_ID = ?,
               INVITATION_STATUS = ?,
               JOIN_STATUS = ?,
@@ -102,7 +99,6 @@ if($_POST['joinGroup']){
 
           $update = $query->execute(array(
               $joinGroupID,
-              'vatandas',
               $v,
               '1',
               $status,
@@ -132,7 +128,6 @@ if($_POST['joinGroup']){
 
           $query = $db->prepare("INSERT INTO tbl_egitim_grup_join SET
               GRUP_ID = ?,
-              JOIN_TYPE = ?,
               JOIN_ID = ?,
               INVITATION_STATUS = ?,
               JOIN_STATUS = ?,
@@ -141,7 +136,6 @@ if($_POST['joinGroup']){
 
           $update = $query->execute(array(
               $joinGroupID,
-              'vatandas',
               $v,
               '1',
               $status,
@@ -161,7 +155,6 @@ if($_POST['joinGroup']){
 
           $query = $db->prepare("INSERT INTO tbl_egitim_grup_join SET
               GRUP_ID = ?,
-              JOIN_TYPE = ?,
               JOIN_ID = ?,
               INVITATION_STATUS = ?,
               JOIN_STATUS = ?,
@@ -170,7 +163,6 @@ if($_POST['joinGroup']){
 
           $update = $query->execute(array(
               $joinGroupID,
-              'sirket',
               $v,
               '1',
               $status,
