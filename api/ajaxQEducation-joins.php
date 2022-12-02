@@ -10,7 +10,7 @@ if(!empty($_POST['id'])){
    $id = $_POST['id'];
 
    //Customers
-      $query = $db->query("SELECT ID, ADI, SOYADI, DT FROM tbl_musteri_kimlik WHERE ID IN ( SELECT JOIN_ID FROM tbl_egitim_grup_join WHERE JOIN_TYPE='vatandas' AND GRUP_ID = '$id')", PDO::FETCH_ASSOC);
+      $query = $db->query("SELECT ID, ADI, SOYADI, DT FROM tbl_musteri_kimlik WHERE ID IN ( SELECT JOIN_ID FROM tbl_egitim_grup_join WHERE GRUP_ID = '$id')", PDO::FETCH_ASSOC);
       if ( $query->rowCount() ){
          foreach( $query as $row ){
             $json['Customers'][] = [
@@ -22,7 +22,7 @@ if(!empty($_POST['id'])){
          }
       }
 
-      $query = $db->query("SELECT ID, ADI, SOYADI, DT FROM tbl_musteri_kimlik WHERE ID NOT IN ( SELECT JOIN_ID FROM tbl_egitim_grup_join WHERE JOIN_TYPE='vatandas' AND GRUP_ID = '$id')", PDO::FETCH_ASSOC);
+      $query = $db->query("SELECT ID, ADI, SOYADI, DT FROM tbl_musteri_kimlik WHERE ID NOT IN ( SELECT JOIN_ID FROM tbl_egitim_grup_join WHERE GRUP_ID = '$id')", PDO::FETCH_ASSOC);
       if ( $query->rowCount() ){
          foreach( $query as $row ){
             $json['Customers'][] = [
