@@ -4,10 +4,11 @@ $varmi = false;
 
 if(isset($_GET['id'])){
     $getID = $_GET['id'];
-    $query = $db->query("SELECT * FROM tbl_egitim WHERE ID = '{$getID}' AND STATUS=1")->fetch(PDO::FETCH_ASSOC);
+    // $query = $db->query("SELECT * FROM tbl_egitim WHERE ID = '{$getID}' AND STATUS=1")->fetch(PDO::FETCH_ASSOC);
     if($query){
         $varmi = true;
-        $educationName = $query['EGITIM_ADI'];
+        // $educationName = $query['EGITIM_ADI'];
+        $educationName = 'abc';
     }else{
         $varmi = false;
     }
