@@ -5,7 +5,7 @@ $sessionID = $_GET['edu'];
 
 
 $myArray = array();
-if ($result = $link->query("SELECT * FROM view_egitim_grup WHERE EGITIM_ID = $sessionID AND STATUS = 1")) {
+if ($result = $link->query("SELECT * FROM view_egitim_grup WHERE STATUS = 1")) {
 
     while($row = $result->fetch_array(MYSQLI_ASSOC)) {
 
