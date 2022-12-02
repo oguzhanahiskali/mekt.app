@@ -45,7 +45,7 @@
     ?>
     <link rel="stylesheet" type="text/css" href="/app-assets/vendors/css/extensions/toastr.css">
     
-    <?php if($urls == 'app-customer-list.php' || $urls == 'app-staff-list.php' || $urls == 'app-services.php' || $urls == 'report-sessions.php' || $urls == 'report-birthdays.php' || $urls == 'app-debtors.php' || $urls == 'app-expenses.php' || $urls == 'report-earnings-by-process-date.php'|| $urls == 'report-earnings-by-installment-date.php' || $urls == 'app-products.php' || $urls == 'settings-room.php' || $urls == 'app-services-application-areas.php'){//app-customer-list.php
+    <?php if($urls == 'app-customer-list.php' || $urls == 'app-education-list.php' || $urls == 'app-education-view.php' || $urls == 'app-education-edit.php' || $urls == 'app-staff-list.php' || $urls == 'app-services.php' || $urls == 'report-sessions.php' || $urls == 'report-birthdays.php' || $urls == 'app-debtors.php' || $urls == 'app-expenses.php' || $urls == 'report-earnings-by-process-date.php'|| $urls == 'report-earnings-by-installment-date.php' || $urls == 'app-products.php' || $urls == 'settings-room.php' || $urls == 'app-services-application-areas.php'){//app-customer-list.php
         echo '<link rel="stylesheet" type="text/css" href="/app-assets/vendors/css/tables/ag-grid/ag-grid.css">
         <link rel="stylesheet" type="text/css" href="/app-assets/vendors/css/tables/ag-grid/ag-theme-material.css">
         <link rel="stylesheet" type="text/css" href="/app-assets/vendors/css/tables/ag-grid/ag-theme-balham-dark.css">
@@ -82,12 +82,12 @@
         echo '<link rel="stylesheet" type="text/css" href="/app-assets/css/pages/dashboard-analytics.css">
         <link rel="stylesheet" type="text/css" href="/app-assets/css/pages/card-analytics.css">
         <link rel="stylesheet" type="text/css" href="/app-assets/css/plugins/tour/tour.css">';
-    }else if($urls == 'app-customer-list.php' || $urls == 'app-staff-list.php' || $urls == 'app-services.php' || $urls == 'report-sessions.php' || $urls == 'report-birthdays.php' || $urls == 'app-debtors.php' || $urls == 'app-expenses.php' || $urls == 'report-earnings-by-process-date.php'|| $urls == 'report-earnings-by-installment-date.php' || $urls == 'app-services-application-areas.php'){
+    }else if($urls == 'app-customer-list.php' || $urls == 'app-education-list.php' || $urls == 'app-education-view.php' || $urls == 'app-education-edit.php' || $urls == 'app-staff-list.php' || $urls == 'app-services.php' || $urls == 'report-sessions.php' || $urls == 'report-birthdays.php' || $urls == 'app-debtors.php' || $urls == 'app-expenses.php' || $urls == 'report-earnings-by-process-date.php'|| $urls == 'report-earnings-by-installment-date.php' || $urls == 'app-services-application-areas.php'){
         echo '<link rel="stylesheet" type="text/css" href="/app-assets/css/pages/app-user.css">
     <link rel="stylesheet" type="text/css" href="/app-assets/css/pages/aggrid.css">
     <link rel="stylesheet" type="text/css" href="/app-assets/css/pages/data-list-view.css">
     ';
-    }else if($urls == 'app-staff-view.php'){
+    }else if($urls == 'app-staff-view.php' || $urls == 'app-education-list.php' || $urls == 'app-education-view.php' || $urls == 'app-education-edit.php' ){
         echo '
         <link rel="stylesheet" type="text/css" href="/app-assets/css/pages/data-list-view.css">';
 
@@ -109,7 +109,7 @@
         <link rel="stylesheet" type="text/css" href="/app-assets/css/pages/aggrid.css">
         <link rel="stylesheet" type="text/css" href="/app-assets/css/plugins/forms/validation/form-validation.css">
     ';
-    }elseif($urls == 'app-customer-view.php' || $urls == 'app-staff-view.php'){
+    }elseif($urls == 'app-customer-view.php' || $urls == 'app-staff-view.php' || $urls == 'app-education-list.php' || $urls == 'app-education-view.php' || $urls == 'app-education-edit.php'){
         echo '<link rel="stylesheet" type="text/css" href="/app-assets/vendors/css/tables/ag-grid/ag-grid.css">
         <link rel="stylesheet" type="text/css" href="/app-assets/vendors/css/tables/ag-grid/ag-theme-material.css">
         <link rel="stylesheet" type="text/css" href="/app-assets/vendors/css/tables/ag-grid/ag-theme-balham-dark.css">

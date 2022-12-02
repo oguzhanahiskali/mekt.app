@@ -121,7 +121,7 @@
         <script src="/app-assets/vendors/js/extensions/tether.min.js"></script>
         <script src="/app-assets/js/weather.js"></script>
         ';
-    }elseif($urls == 'app-customer-list.php' || $urls == 'app-staff-list.php' || $urls == 'app-services.php' || $urls == 'app-expenses.php' || $urls == 'app-products.php'  || $urls == 'app-services-application-areas.php' ){//app-customer-list.php?>
+    }elseif($urls == 'app-customer-list.php' || $urls == 'app-education-list.php' || $urls == 'app-education-view.php' || $urls == 'app-staff-list.php' || $urls == 'app-services.php' || $urls == 'app-expenses.php' || $urls == 'app-products.php'  || $urls == 'app-services-application-areas.php' ){//app-customer-list.php?>
     <script src="/app-assets/vendors/js/tables/datatable/datatables.min.js"></script>    <?php
     } ?>
 
@@ -267,6 +267,19 @@
             });
         });
         </script><?php
+    }else if($urls == 'app-education-list.php'){?>
+        <script src="https://v1.estetik.app/app-assets/vendors/js/extensions/sweetalert.min.js"></script>
+        <script src="app-assets/js/scripts/pages/app-education-list.js"></script>
+        <script src="app-assets/js/scripts/ui/data-list-view.js"></script><?php
+    }else  if($urls == 'app-education-view.php'){?>
+        <script src="https://v1.estetik.app/app-assets/vendors/js/extensions/sweetalert.min.js"></script>
+        <script src="app-assets/js/scripts/pages/app-education-view.js"></script>
+        <footers></footers>
+        <script src="app-assets/js/scripts/ui/data-list-view.js"></script><?php
+    }else  if($urls == 'app-education-edit.php'){?>
+        <script src="https://v1.estetik.app/app-assets/vendors/js/extensions/sweetalert.min.js"></script>
+        <script src="app-assets/js/scripts/pages/app-education-edit.js"></script>
+        <script src="app-assets/js/scripts/ui/data-list-view.js"></script><?php
     }else if($urls == 'app-staff-list.php'){//app-customer-list.php?>
         <script src="/app-assets/js/scripts/pages/app-staffs.js"></script>
         <script src="https://v1.estetik.app/app-assets/vendors/js/extensions/sweetalert.min.js"></script>
