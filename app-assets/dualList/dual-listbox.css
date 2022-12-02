@@ -6,7 +6,7 @@
   display: flex;
   justify-items: stretch;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
 }
 .dual-listbox .dual-listbox__search {
   border: 1px solid #ddd;
@@ -23,16 +23,13 @@
   padding: 0;
   width: 100%;
 }
-.dual-listbox__selected{
-  height:240px!important;
-}
 .dual-listbox .dual-listbox__buttons {
   flex-direction: column;
   margin: 0 10px;
   display: inline-grid;
 }
 .dual-listbox .dual-listbox__button {
-  background-color: #007562;
+  background-color: #7367F0;
   border: 0;
   color: #fff;
   margin-bottom: 5px;
@@ -43,7 +40,7 @@
   background-color: #28b899;
 }
 .dual-listbox .dual-listbox__title {
-  -webkit-margin-before: 1rem;
+  /* -webkit-margin-before: 1rem;
   border-left: 1px solid #efefef;
   border-right: 1px solid #efefef;
   border-top: 1px solid #efefef;
@@ -51,7 +48,13 @@
   text-align:center;
   font-weight: 700;
   margin-top: 1rem;
-  padding: 15px 10px;
+  padding: 15px 10px; */
+    font-size: 100%;
+    font-weight: 700;
+    padding: 5px 0px;
+    color: #7367f0;
+    text-align: center;
+    background-color: #f5f5f5;
 }
 .dual-listbox .dual-listbox__item {
   border-bottom: 1px solid #efefef;
