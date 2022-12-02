@@ -9,40 +9,6 @@ if(!empty($_POST['id'])){
 
    $id = $_POST['id'];
 
-   //Companys
-      $query = $db->query("SELECT ID, companyName, companyTableName, competentFirstname, competentLastname, DT FROM tbl_company WHERE ID IN  ( SELECT JOIN_ID FROM tbl_egitim_grup_join WHERE JOIN_TYPE='sirket' AND GRUP_ID = '$id')", PDO::FETCH_ASSOC);
-      if ( $query->rowCount() ){
-         foreach( $query as $row ){
-            if(      $row['companyName']){ $comapanyTitle = $row['companyName'];
-            }else if($row['companyTableName']){ $comapanyTitle = $row['companyTableName'];
-            }else{   $comapanyTitle = $row['competentFirstname'].' '.$row['competentLastname']; }
-
-            $json['Companys'][] = [
-               'ID'                 =>  intval($row['ID']),
-               'companyTitle'       =>  $comapanyTitle,
-               'joinStatus'         =>  true,
-               'DT'                 =>  $row['DT']
-            ];
-         }
-      }
-
-      $query = $db->query("SELECT ID, companyName, companyTableName, competentFirstname, competentLastname, DT FROM tbl_company WHERE ID NOT IN  ( SELECT JOIN_ID FROM tbl_egitim_grup_join WHERE JOIN_TYPE='sirket' AND GRUP_ID = '$id')", PDO::FETCH_ASSOC);
-      if ( $query->rowCount() ){
-         foreach( $query as $row ){
-            if(      $row['companyName']){ $comapanyTitle = $row['companyName'];
-            }else if($row['companyTableName']){ $comapanyTitle = $row['companyTableName'];
-            }else{   $comapanyTitle = $row['competentFirstname'].' '.$row['competentLastname']; }
-
-            $json['Companys'][] = [
-               'ID'                 =>  intval($row['ID']),
-               'companyTitle'       =>  $comapanyTitle,
-               'joinStatus'         =>  false,
-               'DT'                 =>  $row['DT']
-            ];
-         }
-      }
-
-
    //Customers
       $query = $db->query("SELECT ID, ADI, SOYADI, DT FROM tbl_musteri_kimlik WHERE ID IN ( SELECT JOIN_ID FROM tbl_egitim_grup_join WHERE JOIN_TYPE='vatandas' AND GRUP_ID = '$id')", PDO::FETCH_ASSOC);
       if ( $query->rowCount() ){
