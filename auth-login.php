@@ -178,7 +178,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <!-- BEGIN: Body-->
 
-<body unselectable="on" class="vertical-layout vertical-menu-modern 1-column  navbar-floating footer-static bg-full-screen-image  blank-page blank-page" data-open="click" data-menu="vertical-menu-modern" data-col="1-column">
+    <body unselectable="on" class="vertical-layout vertical-menu-modern 1-column  navbar-floating footer-static bg-full-screen-image  blank-page blank-page" data-open="click" data-menu="vertical-menu-modern" data-col="1-column">
     <!-- BEGIN: Content-->
     <div class="app-content content">
         <div class="content-overlay"></div>
