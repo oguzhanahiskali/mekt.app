@@ -2,25 +2,13 @@
 include $_SERVER['DOCUMENT_ROOT'].'/header-top.php';
 $varmi = false;
 
-if(isset($_GET['id'])){
-    $getID = $_GET['id'];
-    // $query = $db->query("SELECT * FROM tbl_egitim WHERE ID = '{$getID}' AND STATUS=1")->fetch(PDO::FETCH_ASSOC);
-    if($query){
-        $varmi = true;
-        // $educationName = $query['EGITIM_ADI'];
-        $educationName = 'abc';
-    }else{
-        $varmi = false;
-    }
-}else{
-    echo "errör";
-    exit();
-}
 
 if($varmi==false){
     header("Location: 404.php"); /* Redirect browser */
     exit();
 }else{
+    
+    $educationName = 'abc';
     // $query = $db->query("SELECT *,YEAR(CURDATE()) - YEAR(DOGUM_TARIHI) AS YAS FROM tbl_musteri_kimlik WHERE ID = '{$getID}' AND DURUM = 1 AND FIRMA_ID=$user_Firma")->fetch(PDO::FETCH_ASSOC);
     // $tckimlikno = $query['TC'];
     // $hastaadisoyadi = $query['ADI'].' '.$query['SOYADI'];
