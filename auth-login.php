@@ -201,7 +201,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                                 <h4 class="mb-0">Giriş Yap x</h4>
                                             </div>
                                         </div>
-                                        <p class="px-2">Tekrar hoş geldiniz, lütfen hesabınıza giriş yapın. xxx</p>
+                                        <p class="px-2">Tekrar hoş geldiniz, lütfen hesabınıza giriş yapın. xsds</p>
                                         <div class="card-content">
                                             <div class="card-body pt-1">
                                                 <form class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>?returnURL=<?php echo $redirect; ?>" novalidate method="post">
