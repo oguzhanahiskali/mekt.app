@@ -2,13 +2,12 @@
 include $_SERVER['DOCUMENT_ROOT'].'/header-top.php';
 $varmi = true;
 
-
+$getID = 1;
+$educationName = 'abc';
 if($varmi==false){
     header("Location: 404.php"); /* Redirect browser */
     exit();
 }else{
-    
-    $educationName = 'abc';
     // $query = $db->query("SELECT *,YEAR(CURDATE()) - YEAR(DOGUM_TARIHI) AS YAS FROM tbl_musteri_kimlik WHERE ID = '{$getID}' AND DURUM = 1 AND FIRMA_ID=$user_Firma")->fetch(PDO::FETCH_ASSOC);
     // $tckimlikno = $query['TC'];
     // $hastaadisoyadi = $query['ADI'].' '.$query['SOYADI'];
@@ -37,6 +36,7 @@ if($varmi==false){
     <link rel="stylesheet" type="text/css" href="/app-assets/vendors/css/extensions/toastr.min.css">
 <script>
     
+    var ids = <?php echo $getID; ?>;
     var educationNames = '<?php echo $educationName?>';
 </script>
 <!-- END: Head-->
@@ -360,7 +360,7 @@ if($varmi==false){
 
             $('.ag-grid-export-btn').click(function() {
                 window.open(
-                    'https://panel.dijitalsultanbeyli.com/app-assets/data/export-education-joins?type=edu',
+                    'https://panel.dijitalsultanbeyli.com/app-assets/data/export-education-joins?type=edu&eduID='+ids,
                 '_self' // <- This is what makes it open in a new window.
                 );
             });
