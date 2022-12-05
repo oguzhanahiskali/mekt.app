@@ -1,6 +1,6 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/header-top.php';
-$varmi = false;
+$varmi = true;
 
 
 if($varmi==false){
