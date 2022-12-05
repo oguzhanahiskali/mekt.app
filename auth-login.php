@@ -198,7 +198,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                     <div class="cardLogin rounded-0 mb-0 px-2">
                                         <div class="card-header pb-1">
                                             <div class="card-title">
-                                                <h4 class="mb-0">Giriş Yap</h4>
+                                                <h4 class="mb-0">Gxxiriş Yap</h4>
                                             </div>
                                         </div>
                                         <p class="px-2">Tekrar hoş geldiniz, lütfen hesabınıza giriş yapın.</p>
