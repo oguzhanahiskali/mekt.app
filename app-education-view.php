@@ -37,7 +37,6 @@ if($varmi==false){
     <link rel="stylesheet" type="text/css" href="/app-assets/vendors/css/extensions/toastr.min.css">
 <script>
     
-    var ids = <?php echo $getID; ?>;
     var educationNames = '<?php echo $educationName?>';
 </script>
 <!-- END: Head-->
@@ -361,7 +360,7 @@ if($varmi==false){
 
             $('.ag-grid-export-btn').click(function() {
                 window.open(
-                    'https://panel.dijitalsultanbeyli.com/app-assets/data/export-education-joins?type=edu&eduID='+ids,
+                    'https://panel.dijitalsultanbeyli.com/app-assets/data/export-education-joins?type=edu',
                 '_self' // <- This is what makes it open in a new window.
                 );
             });
